@@ -14,16 +14,36 @@ public class CaesarCipher {
 	private char[] shifted;
 	private int shift;
 
-    public CaesarCipher() {
-        int i=0;
+    public CaesarCipher() 
+    {
+        
+        shifter(1);
+
     }
 
-    public CaesarCipher(int num){
+    public CaesarCipher(int num)
+    {
+
+        shifter(num);
 
     }
 
     public String encrypt(String message){
+        String encrypted = "";
 
+        for(int i=0; i<message.length(); i++)
+        {
+            char letter = message.charAt(i);
+            for(int spot=0; spot<alaphbet.length; spot++)
+            {
+                if(letter==alaphbet[spot])
+                {
+                    encrypted += "" + shifted[spot];
+                }
+            }
+        }
+
+        return "";
     }
 
     public String decrypt(String message){
@@ -32,6 +52,8 @@ public class CaesarCipher {
 
     public void shifter(int num){
 
+
+        shifted[i+shift%26]=alaphbet[i];
     }
 
 
